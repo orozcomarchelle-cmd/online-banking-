@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SecureBank | Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🏦</span>
+      <span class="brand-name">SecureBank</span>
+    </div>
+    <div class="topbar-right">
+      <span id="welcomeName">Welcome</span>
+      <button id="logoutBtn" class="btn-secondary">Log Out</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="balance-card">
+      <p class="label">Available Balance</p>
+      <h2 id="balanceAmount">$0.00</h2>
+      <p class="account-number">Account #: <span id="accountNumber">—</span></p>
+    </section>
+
+    <section class="grid-2col">
+      <div class="panel">
+        <h3>Transfer Funds</h3>
+        <form id="transferForm" novalidate>
+          <label for="recipient">Recipient Name / Account</label>
+          <input type="text" id="recipient" name="recipient" placeholder="e.g. John Carter" required>
+
+          <label for="amount">Amount (USD)</label>
+          <input type="number" id="amount" name="amount" placeholder="0.00" min="0.01" step="0.01" required>
+
+          <label for="description">Description (optional)</label>
+          <input type="text" id="description" name="description" placeholder="e.g. Rent payment">
+
+          <div id="transferMsg" class="error-box hidden"></div>
+
+          <button type="submit" class="btn-primary">Send Transfer</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h3>Recent Transactions</h3>
+        <table class="tx-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody id="txTableBody">
+            <tr><td colspan="4">Loading...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SecureBank | Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-wrapper">
+    <div class="auth-card">
+      <div class="brand">
+        <span class="brand-icon">🏦</span>
+        <h1>SecureBank</h1>
+      </div>
+      <p class="subtitle">Demo online banking application</p>
+
+      <form id="loginForm" novalidate>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="e.g. mary.smith" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+        <div id="errorBox" class="error-box hidden"></div>
+
+        <button type="submit" class="btn-primary">Log In</button>
+      </form>
+
+      <div class="demo-hint">
+        <strong>Demo credentials</strong><br>
+        Username: <code>mary.smith</code><br>
+        Password: <code>Banking@123</code>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
